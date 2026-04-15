@@ -1,0 +1,32 @@
+# Version control
+.git
+.gitignore
+
+# IDE / editor
+.idea
+.vscode
+.cursor
+*.swp
+*.swo
+
+# Local env
+.env
+.env.*
+!.env.example
+
+# Build & temp artifacts
+bin/
+tmp/
+dist/
+build-errors.log
+coverage.out
+coverage.html
+*.test
+*.out
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Docs (OpenAPI JSON — not imported by Go packages)
+docs/

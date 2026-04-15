@@ -1,0 +1,37 @@
+name: Build and Push Proto Gen
+
+on:
+  push:
+    branches: [ "main" ]
+
+env:
+  REGISTRY: ghcr.io
+  # Lưu ý: Chỗ này nên để tên image trùng với tên service để dễ quản lý
+  IMAGE_NAME: ghcr.io/anhkhoi2003/sportinas-be-proto-gen
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GH_PAT }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: . # Vì file này nằm ngay trong repo của service đó
+          file: ./Dockerfile
+          push: true
+          tags: ${{ env.IMAGE_NAME }}:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
