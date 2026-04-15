@@ -41,7 +41,7 @@ const file_catalog_v1_merchant_service_proto_rawDesc = "" +
 	"\x1aListPricingRulesByResource\x12-.catalog.v1.ListPricingRulesByResourceRequest\x1a$.catalog.v1.ListPricingRulesResponse\"J\x82\xd3\xe4\x93\x02D\x12B/api/v1/merchants/facilities/resources/{resource_id}/pricing-rules\x12\xaf\x01\n" +
 	"\x11CreatePricingRule\x12$.catalog.v1.CreatePricingRuleRequest\x1a%.catalog.v1.CreatePricingRuleResponse\"M\x82\xd3\xe4\x93\x02G:\x01*\"B/api/v1/merchants/facilities/resources/{resource_id}/pricing-rules\x12\xa9\x01\n" +
 	"\x11UpdatePricingRule\x12$.catalog.v1.UpdatePricingRuleRequest\x1a%.catalog.v1.UpdatePricingRuleResponse\"G\x82\xd3\xe4\x93\x02A:\x01*2</api/v1/merchants/facilities/pricing-rules/{pricing_rule_id}\x12\xa6\x01\n" +
-	"\x11DeletePricingRule\x12$.catalog.v1.DeletePricingRuleRequest\x1a%.catalog.v1.DeletePricingRuleResponse\"D\x82\xd3\xe4\x93\x02>*</api/v1/merchants/facilities/pricing-rules/{pricing_rule_id}BEZCgithub.com/khoitran2003/sportinas-be-proto-gen/catalog/v1;catalogv1b\x06proto3"
+	"\x11DeletePricingRule\x12$.catalog.v1.DeletePricingRuleRequest\x1a%.catalog.v1.DeletePricingRuleResponse\"D\x82\xd3\xe4\x93\x02>*</api/v1/merchants/facilities/pricing-rules/{pricing_rule_id}B8Z6github.com/Sportinas/be-proto-gen/catalog/v1;catalogv1b\x06proto3"
 
 var file_catalog_v1_merchant_service_proto_goTypes = []any{
 	(*CreateFacilityRequest)(nil),             // 0: catalog.v1.CreateFacilityRequest

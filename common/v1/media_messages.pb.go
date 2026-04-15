@@ -236,7 +236,7 @@ const file_common_v1_media_messages_proto_rawDesc = "" +
 	"\x17UploadBatchMediaRequest\x12?\n" +
 	"\brequests\x18\x01 \x03(\v2#.common.v1.UploadSingleMediaRequestR\brequests\"^\n" +
 	"\x18UploadBatchMediaResponse\x12B\n" +
-	"\tresponses\x18\x01 \x03(\v2$.common.v1.UploadSingleMediaResponseR\tresponsesBCZAgithub.com/khoitran2003/sportinas-be-proto-gen/common/v1;commonv1b\x06proto3"
+	"\tresponses\x18\x01 \x03(\v2$.common.v1.UploadSingleMediaResponseR\tresponsesB6Z4github.com/Sportinas/be-proto-gen/common/v1;commonv1b\x06proto3"
 
 var (
 	file_common_v1_media_messages_proto_rawDescOnce sync.Once

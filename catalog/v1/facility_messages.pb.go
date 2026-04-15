@@ -7,7 +7,7 @@
 package catalogv1
 
 import (
-	v1 "github.com/khoitran2003/sportinas-be-proto-gen/common/v1"
+	v1 "github.com/Sportinas/be-proto-gen/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -1719,7 +1719,7 @@ const file_catalog_v1_facility_messages_proto_rawDesc = "" +
 	"\bdistrict\x18\x17 \x01(\v2\x12.catalog.v1.GeoRefR\bdistrict\x12&\n" +
 	"\x04ward\x18\x18 \x01(\v2\x12.catalog.v1.GeoRefR\x04ward\x126\n" +
 	"\bmerchant\x18\x19 \x01(\v2\x1a.catalog.v1.PublicMerchantR\bmerchantJ\x04\b\n" +
-	"\x10\vJ\x04\b\v\x10\fJ\x04\b\f\x10\rBEZCgithub.com/khoitran2003/sportinas-be-proto-gen/catalog/v1;catalogv1b\x06proto3"
+	"\x10\vJ\x04\b\v\x10\fJ\x04\b\f\x10\rB8Z6github.com/Sportinas/be-proto-gen/catalog/v1;catalogv1b\x06proto3"
 
 var (
 	file_catalog_v1_facility_messages_proto_rawDescOnce sync.Once

@@ -26,7 +26,7 @@ const file_auth_v1_internal_service_proto_rawDesc = "" +
 	"\n" +
 	"\x1eauth/v1/internal_service.proto\x12\aauth.v1\x1a\x1fauth/v1/internal_messages.proto2v\n" +
 	"\x13InternalAuthService\x12_\n" +
-	"\x12CreateInternalAuth\x12\".auth.v1.CreateInternalAuthRequest\x1a#.auth.v1.CreateInternalAuthResponse\"\x00B?Z=github.com/khoitran2003/sportinas-be-proto-gen/auth/v1;authv1b\x06proto3"
+	"\x12CreateInternalAuth\x12\".auth.v1.CreateInternalAuthRequest\x1a#.auth.v1.CreateInternalAuthResponse\"\x00B2Z0github.com/Sportinas/be-proto-gen/auth/v1;authv1b\x06proto3"
 
 var file_auth_v1_internal_service_proto_goTypes = []any{
 	(*CreateInternalAuthRequest)(nil),  // 0: auth.v1.CreateInternalAuthRequest

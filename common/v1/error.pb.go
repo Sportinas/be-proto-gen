@@ -81,7 +81,7 @@ const file_common_v1_error_proto_rawDesc = "" +
 	"\x15common/v1/error.proto\x12\tcommon.v1\"<\n" +
 	"\fErrorDetails\x12\x12\n" +
 	"\x04code\x18\x01 \x01(\tR\x04code\x12\x18\n" +
-	"\amessage\x18\x02 \x01(\tR\amessageBCZAgithub.com/khoitran2003/sportinas-be-proto-gen/common/v1;commonv1b\x06proto3"
+	"\amessage\x18\x02 \x01(\tR\amessageB6Z4github.com/Sportinas/be-proto-gen/common/v1;commonv1b\x06proto3"
 
 var (
 	file_common_v1_error_proto_rawDescOnce sync.Once

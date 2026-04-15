@@ -173,7 +173,7 @@ const file_user_v1_user_messages_proto_rawDesc = "" +
 	"\vmerchant_id\x18\x05 \x01(\tR\n" +
 	"merchantId\x12\x1f\n" +
 	"\vschema_name\x18\x06 \x01(\tR\n" +
-	"schemaNameB?Z=github.com/khoitran2003/sportinas-be-proto-gen/user/v1;userv1b\x06proto3"
+	"schemaNameB2Z0github.com/Sportinas/be-proto-gen/user/v1;userv1b\x06proto3"
 
 var (
 	file_user_v1_user_messages_proto_rawDescOnce sync.Once

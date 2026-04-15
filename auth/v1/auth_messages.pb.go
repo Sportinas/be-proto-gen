@@ -330,7 +330,7 @@ const file_auth_v1_auth_messages_proto_rawDesc = "" +
 	"\videntity_id\x18\x01 \x01(\tR\n" +
 	"identityId\"2\n" +
 	"\x16DeleteIdentityResponse\x12\x18\n" +
-	"\amessage\x18\x01 \x01(\tR\amessageB?Z=github.com/khoitran2003/sportinas-be-proto-gen/auth/v1;authv1b\x06proto3"
+	"\amessage\x18\x01 \x01(\tR\amessageB2Z0github.com/Sportinas/be-proto-gen/auth/v1;authv1b\x06proto3"
 
 var (
 	file_auth_v1_auth_messages_proto_rawDescOnce sync.Once

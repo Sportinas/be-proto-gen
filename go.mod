@@ -1,4 +1,4 @@
-module github.com/khoitran2003/sportinas-be-proto-gen
+module github.com/Sportinas/be-proto-gen
 
 go 1.25.4
 

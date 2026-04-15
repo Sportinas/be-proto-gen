@@ -41,7 +41,7 @@ const file_catalog_v1_public_service_proto_rawDesc = "" +
 	"\x0eGetSportSchema\x12!.catalog.v1.GetSportSchemaRequest\x1a\".catalog.v1.GetSportSchemaResponse\":\x82\xd3\xe4\x93\x024\x122/api/v1/public/metadata/sports/{sport_code}/schema\x12v\n" +
 	"\rListProvinces\x12 .catalog.v1.ListProvincesRequest\x1a!.catalog.v1.ListProvincesResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/api/v1/public/provinces\x12v\n" +
 	"\rListDistricts\x12 .catalog.v1.ListDistrictsRequest\x1a!.catalog.v1.ListDistrictsResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/api/v1/public/districts\x12f\n" +
-	"\tListWards\x12\x1c.catalog.v1.ListWardsRequest\x1a\x1d.catalog.v1.ListWardsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/api/v1/public/wardsBEZCgithub.com/khoitran2003/sportinas-be-proto-gen/catalog/v1;catalogv1b\x06proto3"
+	"\tListWards\x12\x1c.catalog.v1.ListWardsRequest\x1a\x1d.catalog.v1.ListWardsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/api/v1/public/wardsB8Z6github.com/Sportinas/be-proto-gen/catalog/v1;catalogv1b\x06proto3"
 
 var file_catalog_v1_public_service_proto_goTypes = []any{
 	(*ListPublicFacilitiesRequest)(nil),     // 0: catalog.v1.ListPublicFacilitiesRequest

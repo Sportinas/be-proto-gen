@@ -7,7 +7,7 @@
 package catalogv1
 
 import (
-	v1 "github.com/khoitran2003/sportinas-be-proto-gen/common/v1"
+	v1 "github.com/Sportinas/be-proto-gen/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -1561,7 +1561,7 @@ const file_catalog_v1_resource_messages_proto_rawDesc = "" +
 	"\tAVAILABLE\x10\x01\x12\b\n" +
 	"\x04FULL\x10\x02\x12\b\n" +
 	"\x04PAST\x10\x03\x12\x0f\n" +
-	"\vMAINTENANCE\x10\x04BEZCgithub.com/khoitran2003/sportinas-be-proto-gen/catalog/v1;catalogv1b\x06proto3"
+	"\vMAINTENANCE\x10\x04B8Z6github.com/Sportinas/be-proto-gen/catalog/v1;catalogv1b\x06proto3"
 
 var (
 	file_catalog_v1_resource_messages_proto_rawDescOnce sync.Once

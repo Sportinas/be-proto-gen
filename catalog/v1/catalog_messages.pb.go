@@ -1238,7 +1238,7 @@ const file_catalog_v1_catalog_messages_proto_rawDesc = "" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12#\n" +
 	"\rdistrict_code\x18\x02 \x01(\tR\fdistrictCode\";\n" +
 	"\x11ListWardsResponse\x12&\n" +
-	"\x05wards\x18\x01 \x03(\v2\x10.catalog.v1.WardR\x05wardsBEZCgithub.com/khoitran2003/sportinas-be-proto-gen/catalog/v1;catalogv1b\x06proto3"
+	"\x05wards\x18\x01 \x03(\v2\x10.catalog.v1.WardR\x05wardsB8Z6github.com/Sportinas/be-proto-gen/catalog/v1;catalogv1b\x06proto3"
 
 var (
 	file_catalog_v1_catalog_messages_proto_rawDescOnce sync.Once

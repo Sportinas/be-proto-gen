@@ -27,7 +27,7 @@ const file_user_v1_user_service_proto_rawDesc = "" +
 	"\x1auser/v1/user_service.proto\x12\auser.v1\x1a\x1buser/v1/user_messages.proto\x1a\x1fuser/v1/merchant_messages.proto2\xb9\x01\n" +
 	"\vUserService\x12Q\n" +
 	"\x0eGetUserForAuth\x12\x1e.user.v1.GetUserForAuthRequest\x1a\x1f.user.v1.GetUserForAuthResponse\x12W\n" +
-	"\x10GetMerchantByKey\x12 .user.v1.GetMerchantByKeyRequest\x1a!.user.v1.GetMerchantByKeyResponseB?Z=github.com/khoitran2003/sportinas-be-proto-gen/user/v1;userv1b\x06proto3"
+	"\x10GetMerchantByKey\x12 .user.v1.GetMerchantByKeyRequest\x1a!.user.v1.GetMerchantByKeyResponseB2Z0github.com/Sportinas/be-proto-gen/user/v1;userv1b\x06proto3"
 
 var file_user_v1_user_service_proto_goTypes = []any{
 	(*GetUserForAuthRequest)(nil),    // 0: user.v1.GetUserForAuthRequest

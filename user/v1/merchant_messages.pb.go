@@ -579,7 +579,7 @@ const file_user_v1_merchant_messages_proto_rawDesc = "" +
 	"\x16MERCHANT_STATUS_ACTIVE\x10\x01\x12\x1c\n" +
 	"\x18MERCHANT_STATUS_INACTIVE\x10\x02\x12\x1d\n" +
 	"\x19MERCHANT_STATUS_SUSPENDED\x10\x03\x12\x1b\n" +
-	"\x17MERCHANT_STATUS_PENDING\x10\x04B?Z=github.com/khoitran2003/sportinas-be-proto-gen/user/v1;userv1b\x06proto3"
+	"\x17MERCHANT_STATUS_PENDING\x10\x04B2Z0github.com/Sportinas/be-proto-gen/user/v1;userv1b\x06proto3"
 
 var (
 	file_user_v1_merchant_messages_proto_rawDescOnce sync.Once

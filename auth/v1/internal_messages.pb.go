@@ -144,7 +144,7 @@ const file_auth_v1_internal_messages_proto_rawDesc = "" +
 	"\bis_admin\x18\x03 \x01(\bR\aisAdmin\"k\n" +
 	"\x1aCreateInternalAuthResponse\x123\n" +
 	"\x16internal_auth_admin_id\x18\x01 \x01(\tR\x13internalAuthAdminId\x12\x18\n" +
-	"\amessage\x18\x02 \x01(\tR\amessageB?Z=github.com/khoitran2003/sportinas-be-proto-gen/auth/v1;authv1b\x06proto3"
+	"\amessage\x18\x02 \x01(\tR\amessageB2Z0github.com/Sportinas/be-proto-gen/auth/v1;authv1b\x06proto3"
 
 var (
 	file_auth_v1_internal_messages_proto_rawDescOnce sync.Once

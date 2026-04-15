@@ -27,7 +27,7 @@ const file_user_v1_internal_service_proto_rawDesc = "" +
 	"\n" +
 	"\x1euser/v1/internal_service.proto\x12\auser.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1fuser/v1/internal_messages.proto2\x9b\x01\n" +
 	"\fAdminService\x12\x8a\x01\n" +
-	"\x13CreateInternalAdmin\x12#.user.v1.CreateInternalAdminRequest\x1a$.user.v1.CreateInternalAdminResponse\"(\x82\xd3\xe4\x93\x02\":\x01*\"\x1d/api/v1/users/internal/adminsB?Z=github.com/khoitran2003/sportinas-be-proto-gen/user/v1;userv1b\x06proto3"
+	"\x13CreateInternalAdmin\x12#.user.v1.CreateInternalAdminRequest\x1a$.user.v1.CreateInternalAdminResponse\"(\x82\xd3\xe4\x93\x02\":\x01*\"\x1d/api/v1/users/internal/adminsB2Z0github.com/Sportinas/be-proto-gen/user/v1;userv1b\x06proto3"
 
 var file_user_v1_internal_service_proto_goTypes = []any{
 	(*CreateInternalAdminRequest)(nil),  // 0: user.v1.CreateInternalAdminRequest

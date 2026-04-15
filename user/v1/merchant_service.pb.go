@@ -28,7 +28,7 @@ const file_user_v1_merchant_service_proto_rawDesc = "" +
 	"\x1euser/v1/merchant_service.proto\x12\auser.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1fuser/v1/merchant_messages.proto2\x8e\x02\n" +
 	"\x0fMerchantService\x12u\n" +
 	"\x0eCreateMerchant\x12\x1e.user.v1.CreateMerchantRequest\x1a\x1f.user.v1.CreateMerchantResponse\"\"\x82\xd3\xe4\x93\x02\x1c:\x01*\"\x17/api/v1/users/merchants\x12\x83\x01\n" +
-	"\x0fGetMerchantByID\x12\x1f.user.v1.GetMerchantByIDRequest\x1a .user.v1.GetMerchantByIDResponse\"-\x82\xd3\xe4\x93\x02'\x12%/api/v1/users/merchants/{merchant_id}B?Z=github.com/khoitran2003/sportinas-be-proto-gen/user/v1;userv1b\x06proto3"
+	"\x0fGetMerchantByID\x12\x1f.user.v1.GetMerchantByIDRequest\x1a .user.v1.GetMerchantByIDResponse\"-\x82\xd3\xe4\x93\x02'\x12%/api/v1/users/merchants/{merchant_id}B2Z0github.com/Sportinas/be-proto-gen/user/v1;userv1b\x06proto3"
 
 var file_user_v1_merchant_service_proto_goTypes = []any{
 	(*CreateMerchantRequest)(nil),   // 0: user.v1.CreateMerchantRequest

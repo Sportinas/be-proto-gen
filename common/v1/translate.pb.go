@@ -81,7 +81,7 @@ const file_common_v1_translate_proto_rawDesc = "" +
 	"\x19common/v1/translate.proto\x12\tcommon.v1\"7\n" +
 	"\rTranslateData\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05valueBCZAgithub.com/khoitran2003/sportinas-be-proto-gen/common/v1;commonv1b\x06proto3"
+	"\x05value\x18\x02 \x01(\tR\x05valueB6Z4github.com/Sportinas/be-proto-gen/common/v1;commonv1b\x06proto3"
 
 var (
 	file_common_v1_translate_proto_rawDescOnce sync.Once

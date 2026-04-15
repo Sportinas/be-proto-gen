@@ -256,7 +256,7 @@ const file_common_v1_pagination_proto_rawDesc = "" +
 	"\x04page\x18\x01 \x01(\x05R\x04page\x12\x14\n" +
 	"\x05limit\x18\x02 \x01(\x05R\x05limit\x12\x1f\n" +
 	"\vtotal_pages\x18\x03 \x01(\x05R\n" +
-	"totalPagesBCZAgithub.com/khoitran2003/sportinas-be-proto-gen/common/v1;commonv1b\x06proto3"
+	"totalPagesB6Z4github.com/Sportinas/be-proto-gen/common/v1;commonv1b\x06proto3"
 
 var (
 	file_common_v1_pagination_proto_rawDescOnce sync.Once

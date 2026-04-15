@@ -938,7 +938,7 @@ const file_catalog_v1_pricing_messages_proto_rawDesc = "" +
 	"\fpricing_rule\x18\x01 \x01(\v2\x1f.catalog.v1.MerchantPricingRuleR\vpricingRule\"B\n" +
 	"\x18DeletePricingRuleRequest\x12&\n" +
 	"\x0fpricing_rule_id\x18\x01 \x01(\tR\rpricingRuleId\"\x1b\n" +
-	"\x19DeletePricingRuleResponseBEZCgithub.com/khoitran2003/sportinas-be-proto-gen/catalog/v1;catalogv1b\x06proto3"
+	"\x19DeletePricingRuleResponseB8Z6github.com/Sportinas/be-proto-gen/catalog/v1;catalogv1b\x06proto3"
 
 var (
 	file_catalog_v1_pricing_messages_proto_rawDescOnce sync.Once

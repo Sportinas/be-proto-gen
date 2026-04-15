@@ -28,7 +28,7 @@ const file_auth_v1_auth_service_proto_rawDesc = "" +
 	"\x1aauth/v1/auth_service.proto\x12\aauth.v1\x1a\x1bauth/v1/auth_messages.proto\x1a\x1cgoogle/api/annotations.proto2\xb9\x01\n" +
 	"\vAuthService\x12U\n" +
 	"\x05Login\x12\x15.auth.v1.LoginRequest\x1a\x16.auth.v1.LoginResponse\"\x1d\x82\xd3\xe4\x93\x02\x17:\x01*\"\x12/api/v1/auth/login\x12S\n" +
-	"\x0eDeleteIdentity\x12\x1e.auth.v1.DeleteIdentityRequest\x1a\x1f.auth.v1.DeleteIdentityResponse\"\x00B?Z=github.com/khoitran2003/sportinas-be-proto-gen/auth/v1;authv1b\x06proto3"
+	"\x0eDeleteIdentity\x12\x1e.auth.v1.DeleteIdentityRequest\x1a\x1f.auth.v1.DeleteIdentityResponse\"\x00B2Z0github.com/Sportinas/be-proto-gen/auth/v1;authv1b\x06proto3"
 
 var file_auth_v1_auth_service_proto_goTypes = []any{
 	(*LoginRequest)(nil),           // 0: auth.v1.LoginRequest

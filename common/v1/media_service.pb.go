@@ -32,7 +32,7 @@ const file_common_v1_media_service_proto_rawDesc = "" +
 	"\x16AdminUploadSingleMedia\x12#.common.v1.UploadSingleMediaRequest\x1a$.common.v1.UploadSingleMediaResponse\",\x82\xd3\xe4\x93\x02&:\x01*\"!/api/v1/admin/media/upload/single\x12\x8d\x01\n" +
 	"\x15AdminUploadBatchMedia\x12\".common.v1.UploadBatchMediaRequest\x1a#.common.v1.UploadBatchMediaResponse\"+\x82\xd3\xe4\x93\x02%:\x01*\" /api/v1/admin/media/upload/batch\x12\x90\x01\n" +
 	"\x15UserUploadSingleMedia\x12#.common.v1.UploadSingleMediaRequest\x1a$.common.v1.UploadSingleMediaResponse\",\x82\xd3\xe4\x93\x02&:\x01*\"!/api/v1/users/media/upload/single\x12\x8c\x01\n" +
-	"\x14UserUploadBatchMedia\x12\".common.v1.UploadBatchMediaRequest\x1a#.common.v1.UploadBatchMediaResponse\"+\x82\xd3\xe4\x93\x02%:\x01*\" /api/v1/users/media/upload/batchBCZAgithub.com/khoitran2003/sportinas-be-proto-gen/common/v1;commonv1b\x06proto3"
+	"\x14UserUploadBatchMedia\x12\".common.v1.UploadBatchMediaRequest\x1a#.common.v1.UploadBatchMediaResponse\"+\x82\xd3\xe4\x93\x02%:\x01*\" /api/v1/users/media/upload/batchB6Z4github.com/Sportinas/be-proto-gen/common/v1;commonv1b\x06proto3"
 
 var file_common_v1_media_service_proto_goTypes = []any{
 	(*UploadSingleMediaRequest)(nil),  // 0: common.v1.UploadSingleMediaRequest
