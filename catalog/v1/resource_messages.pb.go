@@ -355,6 +355,143 @@ func (x *GetResourceSlotsResponse) GetSchedules() []*DailySchedule {
 	return nil
 }
 
+// Internal request used by booking-service to validate slot context before booking.
+type ValidateResourceSlotRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FacilityId    string                 `protobuf:"bytes,1,opt,name=facility_id,json=facilityId,proto3" json:"facility_id,omitempty"`
+	ResourceId    string                 `protobuf:"bytes,2,opt,name=resource_id,json=resourceId,proto3" json:"resource_id,omitempty"`
+	StartTime     *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=start_time,json=startTime,proto3" json:"start_time,omitempty"`
+	EndTime       *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ValidateResourceSlotRequest) Reset() {
+	*x = ValidateResourceSlotRequest{}
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ValidateResourceSlotRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ValidateResourceSlotRequest) ProtoMessage() {}
+
+func (x *ValidateResourceSlotRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ValidateResourceSlotRequest.ProtoReflect.Descriptor instead.
+func (*ValidateResourceSlotRequest) Descriptor() ([]byte, []int) {
+	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *ValidateResourceSlotRequest) GetFacilityId() string {
+	if x != nil {
+		return x.FacilityId
+	}
+	return ""
+}
+
+func (x *ValidateResourceSlotRequest) GetResourceId() string {
+	if x != nil {
+		return x.ResourceId
+	}
+	return ""
+}
+
+func (x *ValidateResourceSlotRequest) GetStartTime() *timestamppb.Timestamp {
+	if x != nil {
+		return x.StartTime
+	}
+	return nil
+}
+
+func (x *ValidateResourceSlotRequest) GetEndTime() *timestamppb.Timestamp {
+	if x != nil {
+		return x.EndTime
+	}
+	return nil
+}
+
+type ValidateResourceSlotResponse struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Valid            bool                   `protobuf:"varint,1,opt,name=valid,proto3" json:"valid,omitempty"`
+	Message          string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	TotalPrice       float64                `protobuf:"fixed64,3,opt,name=total_price,json=totalPrice,proto3" json:"total_price,omitempty"`
+	ChildResourceIds []string               `protobuf:"bytes,4,rep,name=child_resource_ids,json=childResourceIds,proto3" json:"child_resource_ids,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *ValidateResourceSlotResponse) Reset() {
+	*x = ValidateResourceSlotResponse{}
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ValidateResourceSlotResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ValidateResourceSlotResponse) ProtoMessage() {}
+
+func (x *ValidateResourceSlotResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ValidateResourceSlotResponse.ProtoReflect.Descriptor instead.
+func (*ValidateResourceSlotResponse) Descriptor() ([]byte, []int) {
+	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *ValidateResourceSlotResponse) GetValid() bool {
+	if x != nil {
+		return x.Valid
+	}
+	return false
+}
+
+func (x *ValidateResourceSlotResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+func (x *ValidateResourceSlotResponse) GetTotalPrice() float64 {
+	if x != nil {
+		return x.TotalPrice
+	}
+	return 0
+}
+
+func (x *ValidateResourceSlotResponse) GetChildResourceIds() []string {
+	if x != nil {
+		return x.ChildResourceIds
+	}
+	return nil
+}
+
 // Sân / instance vật lý (child_resources) — tóm tắt khi list theo facility
 type ChildResourceSummary struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -370,7 +507,7 @@ type ChildResourceSummary struct {
 
 func (x *ChildResourceSummary) Reset() {
 	*x = ChildResourceSummary{}
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[4]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -382,7 +519,7 @@ func (x *ChildResourceSummary) String() string {
 func (*ChildResourceSummary) ProtoMessage() {}
 
 func (x *ChildResourceSummary) ProtoReflect() protoreflect.Message {
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[4]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -395,7 +532,7 @@ func (x *ChildResourceSummary) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChildResourceSummary.ProtoReflect.Descriptor instead.
 func (*ChildResourceSummary) Descriptor() ([]byte, []int) {
-	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{4}
+	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ChildResourceSummary) GetId() string {
@@ -463,7 +600,7 @@ type Resource struct {
 
 func (x *Resource) Reset() {
 	*x = Resource{}
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[5]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -475,7 +612,7 @@ func (x *Resource) String() string {
 func (*Resource) ProtoMessage() {}
 
 func (x *Resource) ProtoReflect() protoreflect.Message {
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[5]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -488,7 +625,7 @@ func (x *Resource) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Resource.ProtoReflect.Descriptor instead.
 func (*Resource) Descriptor() ([]byte, []int) {
-	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{5}
+	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *Resource) GetId() string {
@@ -608,7 +745,7 @@ type CreateResourceRequest struct {
 
 func (x *CreateResourceRequest) Reset() {
 	*x = CreateResourceRequest{}
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[6]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -620,7 +757,7 @@ func (x *CreateResourceRequest) String() string {
 func (*CreateResourceRequest) ProtoMessage() {}
 
 func (x *CreateResourceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[6]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -633,7 +770,7 @@ func (x *CreateResourceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateResourceRequest.ProtoReflect.Descriptor instead.
 func (*CreateResourceRequest) Descriptor() ([]byte, []int) {
-	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{6}
+	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *CreateResourceRequest) GetFacilityId() string {
@@ -717,7 +854,7 @@ type CreateResourceResponse struct {
 
 func (x *CreateResourceResponse) Reset() {
 	*x = CreateResourceResponse{}
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[7]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -729,7 +866,7 @@ func (x *CreateResourceResponse) String() string {
 func (*CreateResourceResponse) ProtoMessage() {}
 
 func (x *CreateResourceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[7]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -742,7 +879,7 @@ func (x *CreateResourceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateResourceResponse.ProtoReflect.Descriptor instead.
 func (*CreateResourceResponse) Descriptor() ([]byte, []int) {
-	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{7}
+	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *CreateResourceResponse) GetResourceIds() []string {
@@ -775,7 +912,7 @@ type ListResourcesByFacilityRequest struct {
 
 func (x *ListResourcesByFacilityRequest) Reset() {
 	*x = ListResourcesByFacilityRequest{}
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[8]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -787,7 +924,7 @@ func (x *ListResourcesByFacilityRequest) String() string {
 func (*ListResourcesByFacilityRequest) ProtoMessage() {}
 
 func (x *ListResourcesByFacilityRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[8]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -800,7 +937,7 @@ func (x *ListResourcesByFacilityRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListResourcesByFacilityRequest.ProtoReflect.Descriptor instead.
 func (*ListResourcesByFacilityRequest) Descriptor() ([]byte, []int) {
-	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{8}
+	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *ListResourcesByFacilityRequest) GetFacilityId() string {
@@ -819,7 +956,7 @@ type ListResourcesByFacilityResponse struct {
 
 func (x *ListResourcesByFacilityResponse) Reset() {
 	*x = ListResourcesByFacilityResponse{}
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[9]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -831,7 +968,7 @@ func (x *ListResourcesByFacilityResponse) String() string {
 func (*ListResourcesByFacilityResponse) ProtoMessage() {}
 
 func (x *ListResourcesByFacilityResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[9]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -844,7 +981,7 @@ func (x *ListResourcesByFacilityResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListResourcesByFacilityResponse.ProtoReflect.Descriptor instead.
 func (*ListResourcesByFacilityResponse) Descriptor() ([]byte, []int) {
-	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{9}
+	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *ListResourcesByFacilityResponse) GetResources() []*Resource {
@@ -866,7 +1003,7 @@ type ListPublicResourcesRequest struct {
 
 func (x *ListPublicResourcesRequest) Reset() {
 	*x = ListPublicResourcesRequest{}
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[10]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -878,7 +1015,7 @@ func (x *ListPublicResourcesRequest) String() string {
 func (*ListPublicResourcesRequest) ProtoMessage() {}
 
 func (x *ListPublicResourcesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[10]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -891,7 +1028,7 @@ func (x *ListPublicResourcesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPublicResourcesRequest.ProtoReflect.Descriptor instead.
 func (*ListPublicResourcesRequest) Descriptor() ([]byte, []int) {
-	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{10}
+	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *ListPublicResourcesRequest) GetFacilityId() string {
@@ -930,7 +1067,7 @@ type PublicResource struct {
 
 func (x *PublicResource) Reset() {
 	*x = PublicResource{}
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[11]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -942,7 +1079,7 @@ func (x *PublicResource) String() string {
 func (*PublicResource) ProtoMessage() {}
 
 func (x *PublicResource) ProtoReflect() protoreflect.Message {
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[11]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -955,7 +1092,7 @@ func (x *PublicResource) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PublicResource.ProtoReflect.Descriptor instead.
 func (*PublicResource) Descriptor() ([]byte, []int) {
-	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{11}
+	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *PublicResource) GetId() string {
@@ -1017,7 +1154,7 @@ type ListPublicResourcesResponse struct {
 
 func (x *ListPublicResourcesResponse) Reset() {
 	*x = ListPublicResourcesResponse{}
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[12]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1029,7 +1166,7 @@ func (x *ListPublicResourcesResponse) String() string {
 func (*ListPublicResourcesResponse) ProtoMessage() {}
 
 func (x *ListPublicResourcesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[12]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1042,7 +1179,7 @@ func (x *ListPublicResourcesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPublicResourcesResponse.ProtoReflect.Descriptor instead.
 func (*ListPublicResourcesResponse) Descriptor() ([]byte, []int) {
-	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{12}
+	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *ListPublicResourcesResponse) GetResources() []*PublicResource {
@@ -1068,7 +1205,7 @@ type GetResourceRequest struct {
 
 func (x *GetResourceRequest) Reset() {
 	*x = GetResourceRequest{}
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[13]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1080,7 +1217,7 @@ func (x *GetResourceRequest) String() string {
 func (*GetResourceRequest) ProtoMessage() {}
 
 func (x *GetResourceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[13]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1093,7 +1230,7 @@ func (x *GetResourceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetResourceRequest.ProtoReflect.Descriptor instead.
 func (*GetResourceRequest) Descriptor() ([]byte, []int) {
-	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{13}
+	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *GetResourceRequest) GetResourceId() string {
@@ -1112,7 +1249,7 @@ type GetResourceResponse struct {
 
 func (x *GetResourceResponse) Reset() {
 	*x = GetResourceResponse{}
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[14]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1124,7 +1261,7 @@ func (x *GetResourceResponse) String() string {
 func (*GetResourceResponse) ProtoMessage() {}
 
 func (x *GetResourceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[14]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1137,7 +1274,7 @@ func (x *GetResourceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetResourceResponse.ProtoReflect.Descriptor instead.
 func (*GetResourceResponse) Descriptor() ([]byte, []int) {
-	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{14}
+	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *GetResourceResponse) GetResource() *Resource {
@@ -1163,7 +1300,7 @@ type UpdateResourceRequest struct {
 
 func (x *UpdateResourceRequest) Reset() {
 	*x = UpdateResourceRequest{}
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[15]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1175,7 +1312,7 @@ func (x *UpdateResourceRequest) String() string {
 func (*UpdateResourceRequest) ProtoMessage() {}
 
 func (x *UpdateResourceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[15]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1188,7 +1325,7 @@ func (x *UpdateResourceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateResourceRequest.ProtoReflect.Descriptor instead.
 func (*UpdateResourceRequest) Descriptor() ([]byte, []int) {
-	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{15}
+	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *UpdateResourceRequest) GetResourceId() string {
@@ -1256,7 +1393,7 @@ type UpdateResourceResponse struct {
 
 func (x *UpdateResourceResponse) Reset() {
 	*x = UpdateResourceResponse{}
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[16]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1268,7 +1405,7 @@ func (x *UpdateResourceResponse) String() string {
 func (*UpdateResourceResponse) ProtoMessage() {}
 
 func (x *UpdateResourceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[16]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1281,7 +1418,7 @@ func (x *UpdateResourceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateResourceResponse.ProtoReflect.Descriptor instead.
 func (*UpdateResourceResponse) Descriptor() ([]byte, []int) {
-	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{16}
+	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *UpdateResourceResponse) GetResource() *Resource {
@@ -1304,7 +1441,7 @@ type UpdateChildResourceRequest struct {
 
 func (x *UpdateChildResourceRequest) Reset() {
 	*x = UpdateChildResourceRequest{}
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[17]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1316,7 +1453,7 @@ func (x *UpdateChildResourceRequest) String() string {
 func (*UpdateChildResourceRequest) ProtoMessage() {}
 
 func (x *UpdateChildResourceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[17]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1329,7 +1466,7 @@ func (x *UpdateChildResourceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateChildResourceRequest.ProtoReflect.Descriptor instead.
 func (*UpdateChildResourceRequest) Descriptor() ([]byte, []int) {
-	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{17}
+	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *UpdateChildResourceRequest) GetResourceId() string {
@@ -1369,7 +1506,7 @@ type UpdateChildResourceResponse struct {
 
 func (x *UpdateChildResourceResponse) Reset() {
 	*x = UpdateChildResourceResponse{}
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[18]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1381,7 +1518,7 @@ func (x *UpdateChildResourceResponse) String() string {
 func (*UpdateChildResourceResponse) ProtoMessage() {}
 
 func (x *UpdateChildResourceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_catalog_v1_resource_messages_proto_msgTypes[18]
+	mi := &file_catalog_v1_resource_messages_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1394,7 +1531,7 @@ func (x *UpdateChildResourceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateChildResourceResponse.ProtoReflect.Descriptor instead.
 func (*UpdateChildResourceResponse) Descriptor() ([]byte, []int) {
-	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{18}
+	return file_catalog_v1_resource_messages_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *UpdateChildResourceResponse) GetResource() *Resource {
@@ -1433,7 +1570,21 @@ const file_catalog_v1_resource_messages_proto_rawDesc = "" +
 	"\tslot_step\x18\x02 \x01(\x05R\bslotStep\x12\x19\n" +
 	"\bmin_time\x18\x03 \x01(\tR\aminTime\x12\x19\n" +
 	"\bmax_time\x18\x04 \x01(\tR\amaxTime\x127\n" +
-	"\tschedules\x18\x05 \x03(\v2\x19.catalog.v1.DailyScheduleR\tschedules\"\xf5\x01\n" +
+	"\tschedules\x18\x05 \x03(\v2\x19.catalog.v1.DailyScheduleR\tschedules\"\xd1\x01\n" +
+	"\x1bValidateResourceSlotRequest\x12\x1f\n" +
+	"\vfacility_id\x18\x01 \x01(\tR\n" +
+	"facilityId\x12\x1f\n" +
+	"\vresource_id\x18\x02 \x01(\tR\n" +
+	"resourceId\x129\n" +
+	"\n" +
+	"start_time\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\tstartTime\x125\n" +
+	"\bend_time\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\aendTime\"\x9d\x01\n" +
+	"\x1cValidateResourceSlotResponse\x12\x14\n" +
+	"\x05valid\x18\x01 \x01(\bR\x05valid\x12\x18\n" +
+	"\amessage\x18\x02 \x01(\tR\amessage\x12\x1f\n" +
+	"\vtotal_price\x18\x03 \x01(\x01R\n" +
+	"totalPrice\x12,\n" +
+	"\x12child_resource_ids\x18\x04 \x03(\tR\x10childResourceIds\"\xf5\x01\n" +
 	"\x14ChildResourceSummary\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x16\n" +
@@ -1576,55 +1727,59 @@ func file_catalog_v1_resource_messages_proto_rawDescGZIP() []byte {
 }
 
 var file_catalog_v1_resource_messages_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_catalog_v1_resource_messages_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
+var file_catalog_v1_resource_messages_proto_msgTypes = make([]protoimpl.MessageInfo, 21)
 var file_catalog_v1_resource_messages_proto_goTypes = []any{
 	(SlotStatus)(0),                         // 0: catalog.v1.SlotStatus
 	(*GetResourceSlotsRequest)(nil),         // 1: catalog.v1.GetResourceSlotsRequest
 	(*TimeSlot)(nil),                        // 2: catalog.v1.TimeSlot
 	(*DailySchedule)(nil),                   // 3: catalog.v1.DailySchedule
 	(*GetResourceSlotsResponse)(nil),        // 4: catalog.v1.GetResourceSlotsResponse
-	(*ChildResourceSummary)(nil),            // 5: catalog.v1.ChildResourceSummary
-	(*Resource)(nil),                        // 6: catalog.v1.Resource
-	(*CreateResourceRequest)(nil),           // 7: catalog.v1.CreateResourceRequest
-	(*CreateResourceResponse)(nil),          // 8: catalog.v1.CreateResourceResponse
-	(*ListResourcesByFacilityRequest)(nil),  // 9: catalog.v1.ListResourcesByFacilityRequest
-	(*ListResourcesByFacilityResponse)(nil), // 10: catalog.v1.ListResourcesByFacilityResponse
-	(*ListPublicResourcesRequest)(nil),      // 11: catalog.v1.ListPublicResourcesRequest
-	(*PublicResource)(nil),                  // 12: catalog.v1.PublicResource
-	(*ListPublicResourcesResponse)(nil),     // 13: catalog.v1.ListPublicResourcesResponse
-	(*GetResourceRequest)(nil),              // 14: catalog.v1.GetResourceRequest
-	(*GetResourceResponse)(nil),             // 15: catalog.v1.GetResourceResponse
-	(*UpdateResourceRequest)(nil),           // 16: catalog.v1.UpdateResourceRequest
-	(*UpdateResourceResponse)(nil),          // 17: catalog.v1.UpdateResourceResponse
-	(*UpdateChildResourceRequest)(nil),      // 18: catalog.v1.UpdateChildResourceRequest
-	(*UpdateChildResourceResponse)(nil),     // 19: catalog.v1.UpdateChildResourceResponse
-	(*timestamppb.Timestamp)(nil),           // 20: google.protobuf.Timestamp
-	(*Sport)(nil),                           // 21: catalog.v1.Sport
-	(*v1.CursorPaginationRequest)(nil),      // 22: common.v1.CursorPaginationRequest
-	(*v1.CursorPaginationResponse)(nil),     // 23: common.v1.CursorPaginationResponse
+	(*ValidateResourceSlotRequest)(nil),     // 5: catalog.v1.ValidateResourceSlotRequest
+	(*ValidateResourceSlotResponse)(nil),    // 6: catalog.v1.ValidateResourceSlotResponse
+	(*ChildResourceSummary)(nil),            // 7: catalog.v1.ChildResourceSummary
+	(*Resource)(nil),                        // 8: catalog.v1.Resource
+	(*CreateResourceRequest)(nil),           // 9: catalog.v1.CreateResourceRequest
+	(*CreateResourceResponse)(nil),          // 10: catalog.v1.CreateResourceResponse
+	(*ListResourcesByFacilityRequest)(nil),  // 11: catalog.v1.ListResourcesByFacilityRequest
+	(*ListResourcesByFacilityResponse)(nil), // 12: catalog.v1.ListResourcesByFacilityResponse
+	(*ListPublicResourcesRequest)(nil),      // 13: catalog.v1.ListPublicResourcesRequest
+	(*PublicResource)(nil),                  // 14: catalog.v1.PublicResource
+	(*ListPublicResourcesResponse)(nil),     // 15: catalog.v1.ListPublicResourcesResponse
+	(*GetResourceRequest)(nil),              // 16: catalog.v1.GetResourceRequest
+	(*GetResourceResponse)(nil),             // 17: catalog.v1.GetResourceResponse
+	(*UpdateResourceRequest)(nil),           // 18: catalog.v1.UpdateResourceRequest
+	(*UpdateResourceResponse)(nil),          // 19: catalog.v1.UpdateResourceResponse
+	(*UpdateChildResourceRequest)(nil),      // 20: catalog.v1.UpdateChildResourceRequest
+	(*UpdateChildResourceResponse)(nil),     // 21: catalog.v1.UpdateChildResourceResponse
+	(*timestamppb.Timestamp)(nil),           // 22: google.protobuf.Timestamp
+	(*Sport)(nil),                           // 23: catalog.v1.Sport
+	(*v1.CursorPaginationRequest)(nil),      // 24: common.v1.CursorPaginationRequest
+	(*v1.CursorPaginationResponse)(nil),     // 25: common.v1.CursorPaginationResponse
 }
 var file_catalog_v1_resource_messages_proto_depIdxs = []int32{
 	0,  // 0: catalog.v1.TimeSlot.status:type_name -> catalog.v1.SlotStatus
 	2,  // 1: catalog.v1.DailySchedule.slots:type_name -> catalog.v1.TimeSlot
 	3,  // 2: catalog.v1.GetResourceSlotsResponse.schedules:type_name -> catalog.v1.DailySchedule
-	20, // 3: catalog.v1.ChildResourceSummary.created_at:type_name -> google.protobuf.Timestamp
-	20, // 4: catalog.v1.ChildResourceSummary.updated_at:type_name -> google.protobuf.Timestamp
-	21, // 5: catalog.v1.Resource.sport:type_name -> catalog.v1.Sport
-	20, // 6: catalog.v1.Resource.created_at:type_name -> google.protobuf.Timestamp
-	20, // 7: catalog.v1.Resource.updated_at:type_name -> google.protobuf.Timestamp
-	5,  // 8: catalog.v1.Resource.child_resources:type_name -> catalog.v1.ChildResourceSummary
-	6,  // 9: catalog.v1.ListResourcesByFacilityResponse.resources:type_name -> catalog.v1.Resource
-	22, // 10: catalog.v1.ListPublicResourcesRequest.pagination:type_name -> common.v1.CursorPaginationRequest
-	12, // 11: catalog.v1.ListPublicResourcesResponse.resources:type_name -> catalog.v1.PublicResource
-	23, // 12: catalog.v1.ListPublicResourcesResponse.meta:type_name -> common.v1.CursorPaginationResponse
-	6,  // 13: catalog.v1.GetResourceResponse.resource:type_name -> catalog.v1.Resource
-	6,  // 14: catalog.v1.UpdateResourceResponse.resource:type_name -> catalog.v1.Resource
-	6,  // 15: catalog.v1.UpdateChildResourceResponse.resource:type_name -> catalog.v1.Resource
-	16, // [16:16] is the sub-list for method output_type
-	16, // [16:16] is the sub-list for method input_type
-	16, // [16:16] is the sub-list for extension type_name
-	16, // [16:16] is the sub-list for extension extendee
-	0,  // [0:16] is the sub-list for field type_name
+	22, // 3: catalog.v1.ValidateResourceSlotRequest.start_time:type_name -> google.protobuf.Timestamp
+	22, // 4: catalog.v1.ValidateResourceSlotRequest.end_time:type_name -> google.protobuf.Timestamp
+	22, // 5: catalog.v1.ChildResourceSummary.created_at:type_name -> google.protobuf.Timestamp
+	22, // 6: catalog.v1.ChildResourceSummary.updated_at:type_name -> google.protobuf.Timestamp
+	23, // 7: catalog.v1.Resource.sport:type_name -> catalog.v1.Sport
+	22, // 8: catalog.v1.Resource.created_at:type_name -> google.protobuf.Timestamp
+	22, // 9: catalog.v1.Resource.updated_at:type_name -> google.protobuf.Timestamp
+	7,  // 10: catalog.v1.Resource.child_resources:type_name -> catalog.v1.ChildResourceSummary
+	8,  // 11: catalog.v1.ListResourcesByFacilityResponse.resources:type_name -> catalog.v1.Resource
+	24, // 12: catalog.v1.ListPublicResourcesRequest.pagination:type_name -> common.v1.CursorPaginationRequest
+	14, // 13: catalog.v1.ListPublicResourcesResponse.resources:type_name -> catalog.v1.PublicResource
+	25, // 14: catalog.v1.ListPublicResourcesResponse.meta:type_name -> common.v1.CursorPaginationResponse
+	8,  // 15: catalog.v1.GetResourceResponse.resource:type_name -> catalog.v1.Resource
+	8,  // 16: catalog.v1.UpdateResourceResponse.resource:type_name -> catalog.v1.Resource
+	8,  // 17: catalog.v1.UpdateChildResourceResponse.resource:type_name -> catalog.v1.Resource
+	18, // [18:18] is the sub-list for method output_type
+	18, // [18:18] is the sub-list for method input_type
+	18, // [18:18] is the sub-list for extension type_name
+	18, // [18:18] is the sub-list for extension extendee
+	0,  // [0:18] is the sub-list for field type_name
 }
 
 func init() { file_catalog_v1_resource_messages_proto_init() }
@@ -1633,19 +1788,19 @@ func file_catalog_v1_resource_messages_proto_init() {
 		return
 	}
 	file_catalog_v1_catalog_messages_proto_init()
-	file_catalog_v1_resource_messages_proto_msgTypes[4].OneofWrappers = []any{}
-	file_catalog_v1_resource_messages_proto_msgTypes[5].OneofWrappers = []any{}
 	file_catalog_v1_resource_messages_proto_msgTypes[6].OneofWrappers = []any{}
 	file_catalog_v1_resource_messages_proto_msgTypes[7].OneofWrappers = []any{}
-	file_catalog_v1_resource_messages_proto_msgTypes[15].OneofWrappers = []any{}
+	file_catalog_v1_resource_messages_proto_msgTypes[8].OneofWrappers = []any{}
+	file_catalog_v1_resource_messages_proto_msgTypes[9].OneofWrappers = []any{}
 	file_catalog_v1_resource_messages_proto_msgTypes[17].OneofWrappers = []any{}
+	file_catalog_v1_resource_messages_proto_msgTypes[19].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_catalog_v1_resource_messages_proto_rawDesc), len(file_catalog_v1_resource_messages_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   19,
+			NumMessages:   21,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

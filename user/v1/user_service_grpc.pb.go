@@ -19,8 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	UserService_GetUserForAuth_FullMethodName   = "/user.v1.UserService/GetUserForAuth"
-	UserService_GetMerchantByKey_FullMethodName = "/user.v1.UserService/GetMerchantByKey"
+	UserService_GetUserForAuth_FullMethodName     = "/user.v1.UserService/GetUserForAuth"
+	UserService_GetMerchantByKey_FullMethodName   = "/user.v1.UserService/GetMerchantByKey"
+	UserService_CreateCustomerUser_FullMethodName = "/user.v1.UserService/CreateCustomerUser"
+	UserService_UpdateUserInfo_FullMethodName     = "/user.v1.UserService/UpdateUserInfo"
+	UserService_GetMe_FullMethodName              = "/user.v1.UserService/GetMe"
 )
 
 // UserServiceClient is the client API for UserService service.
@@ -29,6 +32,9 @@ const (
 type UserServiceClient interface {
 	GetUserForAuth(ctx context.Context, in *GetUserForAuthRequest, opts ...grpc.CallOption) (*GetUserForAuthResponse, error)
 	GetMerchantByKey(ctx context.Context, in *GetMerchantByKeyRequest, opts ...grpc.CallOption) (*GetMerchantByKeyResponse, error)
+	CreateCustomerUser(ctx context.Context, in *CreateCustomerUserRequest, opts ...grpc.CallOption) (*CreateCustomerUserResponse, error)
+	UpdateUserInfo(ctx context.Context, in *UpdateUserInfoRequest, opts ...grpc.CallOption) (*UpdateUserInfoResponse, error)
+	GetMe(ctx context.Context, in *GetMeRequest, opts ...grpc.CallOption) (*GetMeResponse, error)
 }
 
 type userServiceClient struct {
@@ -59,12 +65,45 @@ func (c *userServiceClient) GetMerchantByKey(ctx context.Context, in *GetMerchan
 	return out, nil
 }
 
+func (c *userServiceClient) CreateCustomerUser(ctx context.Context, in *CreateCustomerUserRequest, opts ...grpc.CallOption) (*CreateCustomerUserResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateCustomerUserResponse)
+	err := c.cc.Invoke(ctx, UserService_CreateCustomerUser_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) UpdateUserInfo(ctx context.Context, in *UpdateUserInfoRequest, opts ...grpc.CallOption) (*UpdateUserInfoResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateUserInfoResponse)
+	err := c.cc.Invoke(ctx, UserService_UpdateUserInfo_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) GetMe(ctx context.Context, in *GetMeRequest, opts ...grpc.CallOption) (*GetMeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetMeResponse)
+	err := c.cc.Invoke(ctx, UserService_GetMe_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserServiceServer is the server API for UserService service.
 // All implementations should embed UnimplementedUserServiceServer
 // for forward compatibility.
 type UserServiceServer interface {
 	GetUserForAuth(context.Context, *GetUserForAuthRequest) (*GetUserForAuthResponse, error)
 	GetMerchantByKey(context.Context, *GetMerchantByKeyRequest) (*GetMerchantByKeyResponse, error)
+	CreateCustomerUser(context.Context, *CreateCustomerUserRequest) (*CreateCustomerUserResponse, error)
+	UpdateUserInfo(context.Context, *UpdateUserInfoRequest) (*UpdateUserInfoResponse, error)
+	GetMe(context.Context, *GetMeRequest) (*GetMeResponse, error)
 }
 
 // UnimplementedUserServiceServer should be embedded to have
@@ -79,6 +118,15 @@ func (UnimplementedUserServiceServer) GetUserForAuth(context.Context, *GetUserFo
 }
 func (UnimplementedUserServiceServer) GetMerchantByKey(context.Context, *GetMerchantByKeyRequest) (*GetMerchantByKeyResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetMerchantByKey not implemented")
+}
+func (UnimplementedUserServiceServer) CreateCustomerUser(context.Context, *CreateCustomerUserRequest) (*CreateCustomerUserResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateCustomerUser not implemented")
+}
+func (UnimplementedUserServiceServer) UpdateUserInfo(context.Context, *UpdateUserInfoRequest) (*UpdateUserInfoResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateUserInfo not implemented")
+}
+func (UnimplementedUserServiceServer) GetMe(context.Context, *GetMeRequest) (*GetMeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetMe not implemented")
 }
 func (UnimplementedUserServiceServer) testEmbeddedByValue() {}
 
@@ -136,6 +184,60 @@ func _UserService_GetMerchantByKey_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserService_CreateCustomerUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCustomerUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).CreateCustomerUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UserService_CreateCustomerUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).CreateCustomerUser(ctx, req.(*CreateCustomerUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_UpdateUserInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateUserInfoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).UpdateUserInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UserService_UpdateUserInfo_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).UpdateUserInfo(ctx, req.(*UpdateUserInfoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_GetMe_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).GetMe(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UserService_GetMe_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).GetMe(ctx, req.(*GetMeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // UserService_ServiceDesc is the grpc.ServiceDesc for UserService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -150,6 +252,18 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetMerchantByKey",
 			Handler:    _UserService_GetMerchantByKey_Handler,
+		},
+		{
+			MethodName: "CreateCustomerUser",
+			Handler:    _UserService_CreateCustomerUser_Handler,
+		},
+		{
+			MethodName: "UpdateUserInfo",
+			Handler:    _UserService_UpdateUserInfo_Handler,
+		},
+		{
+			MethodName: "GetMe",
+			Handler:    _UserService_GetMe_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

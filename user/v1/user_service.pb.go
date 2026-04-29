@@ -7,6 +7,7 @@
 package userv1
 
 import (
+	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -24,24 +25,39 @@ var File_user_v1_user_service_proto protoreflect.FileDescriptor
 
 const file_user_v1_user_service_proto_rawDesc = "" +
 	"\n" +
-	"\x1auser/v1/user_service.proto\x12\auser.v1\x1a\x1buser/v1/user_messages.proto\x1a\x1fuser/v1/merchant_messages.proto2\xb9\x01\n" +
+	"\x1auser/v1/user_service.proto\x12\auser.v1\x1a\x1buser/v1/user_messages.proto\x1a\x1fuser/v1/merchant_messages.proto\x1a\x1cgoogle/api/annotations.proto2\xbc\x03\n" +
 	"\vUserService\x12Q\n" +
 	"\x0eGetUserForAuth\x12\x1e.user.v1.GetUserForAuthRequest\x1a\x1f.user.v1.GetUserForAuthResponse\x12W\n" +
-	"\x10GetMerchantByKey\x12 .user.v1.GetMerchantByKeyRequest\x1a!.user.v1.GetMerchantByKeyResponseB2Z0github.com/Sportinas/be-proto-gen/user/v1;userv1b\x06proto3"
+	"\x10GetMerchantByKey\x12 .user.v1.GetMerchantByKeyRequest\x1a!.user.v1.GetMerchantByKeyResponse\x12]\n" +
+	"\x12CreateCustomerUser\x12\".user.v1.CreateCustomerUserRequest\x1a#.user.v1.CreateCustomerUserResponse\x12Q\n" +
+	"\x0eUpdateUserInfo\x12\x1e.user.v1.UpdateUserInfoRequest\x1a\x1f.user.v1.UpdateUserInfoResponse\x12O\n" +
+	"\x05GetMe\x12\x15.user.v1.GetMeRequest\x1a\x16.user.v1.GetMeResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/api/v1/auth/meB2Z0github.com/Sportinas/be-proto-gen/user/v1;userv1b\x06proto3"
 
 var file_user_v1_user_service_proto_goTypes = []any{
-	(*GetUserForAuthRequest)(nil),    // 0: user.v1.GetUserForAuthRequest
-	(*GetMerchantByKeyRequest)(nil),  // 1: user.v1.GetMerchantByKeyRequest
-	(*GetUserForAuthResponse)(nil),   // 2: user.v1.GetUserForAuthResponse
-	(*GetMerchantByKeyResponse)(nil), // 3: user.v1.GetMerchantByKeyResponse
+	(*GetUserForAuthRequest)(nil),      // 0: user.v1.GetUserForAuthRequest
+	(*GetMerchantByKeyRequest)(nil),    // 1: user.v1.GetMerchantByKeyRequest
+	(*CreateCustomerUserRequest)(nil),  // 2: user.v1.CreateCustomerUserRequest
+	(*UpdateUserInfoRequest)(nil),      // 3: user.v1.UpdateUserInfoRequest
+	(*GetMeRequest)(nil),               // 4: user.v1.GetMeRequest
+	(*GetUserForAuthResponse)(nil),     // 5: user.v1.GetUserForAuthResponse
+	(*GetMerchantByKeyResponse)(nil),   // 6: user.v1.GetMerchantByKeyResponse
+	(*CreateCustomerUserResponse)(nil), // 7: user.v1.CreateCustomerUserResponse
+	(*UpdateUserInfoResponse)(nil),     // 8: user.v1.UpdateUserInfoResponse
+	(*GetMeResponse)(nil),              // 9: user.v1.GetMeResponse
 }
 var file_user_v1_user_service_proto_depIdxs = []int32{
 	0, // 0: user.v1.UserService.GetUserForAuth:input_type -> user.v1.GetUserForAuthRequest
 	1, // 1: user.v1.UserService.GetMerchantByKey:input_type -> user.v1.GetMerchantByKeyRequest
-	2, // 2: user.v1.UserService.GetUserForAuth:output_type -> user.v1.GetUserForAuthResponse
-	3, // 3: user.v1.UserService.GetMerchantByKey:output_type -> user.v1.GetMerchantByKeyResponse
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
+	2, // 2: user.v1.UserService.CreateCustomerUser:input_type -> user.v1.CreateCustomerUserRequest
+	3, // 3: user.v1.UserService.UpdateUserInfo:input_type -> user.v1.UpdateUserInfoRequest
+	4, // 4: user.v1.UserService.GetMe:input_type -> user.v1.GetMeRequest
+	5, // 5: user.v1.UserService.GetUserForAuth:output_type -> user.v1.GetUserForAuthResponse
+	6, // 6: user.v1.UserService.GetMerchantByKey:output_type -> user.v1.GetMerchantByKeyResponse
+	7, // 7: user.v1.UserService.CreateCustomerUser:output_type -> user.v1.CreateCustomerUserResponse
+	8, // 8: user.v1.UserService.UpdateUserInfo:output_type -> user.v1.UpdateUserInfoResponse
+	9, // 9: user.v1.UserService.GetMe:output_type -> user.v1.GetMeResponse
+	5, // [5:10] is the sub-list for method output_type
+	0, // [0:5] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
