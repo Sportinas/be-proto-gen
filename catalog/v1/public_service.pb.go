@@ -26,13 +26,14 @@ var File_catalog_v1_public_service_proto protoreflect.FileDescriptor
 const file_catalog_v1_public_service_proto_rawDesc = "" +
 	"\n" +
 	"\x1fcatalog/v1/public_service.proto\x12\n" +
-	"catalog.v1\x1a!catalog/v1/catalog_messages.proto\x1a\"catalog/v1/facility_messages.proto\x1a\"catalog/v1/resource_messages.proto\x1a\x1cgoogle/api/annotations.proto2\x98\x06\n" +
+	"catalog.v1\x1a!catalog/v1/catalog_messages.proto\x1a\"catalog/v1/facility_messages.proto\x1a\"catalog/v1/resource_messages.proto\x1a\x1cgoogle/api/annotations.proto2\x83\a\n" +
 	"\x15PublicFacilityService\x12\x8c\x01\n" +
 	"\x14ListPublicFacilities\x12'.catalog.v1.ListPublicFacilitiesRequest\x1a(.catalog.v1.ListPublicFacilitiesResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/api/v1/public/facilities\x12\x98\x01\n" +
 	"\x16SearchPublicFacilities\x12'.catalog.v1.ListPublicFacilitiesRequest\x1a(.catalog.v1.ListPublicFacilitiesResponse\"+\x82\xd3\xe4\x93\x02%:\x01*\" /api/v1/public/facilities:search\x12\x9a\x01\n" +
 	"\x17GetDetailPublicFacility\x12*.catalog.v1.GetDetailPublicFacilityRequest\x1a+.catalog.v1.GetDetailPublicFacilityResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/api/v1/public/facilities/{id}\x12\xa1\x01\n" +
 	"\x13ListPublicResources\x12&.catalog.v1.ListPublicResourcesRequest\x1a'.catalog.v1.ListPublicResourcesResponse\"9\x82\xd3\xe4\x93\x023\x121/api/v1/public/facilities/{facility_id}/resources\x12\x93\x01\n" +
-	"\x10GetResourceSlots\x12#.catalog.v1.GetResourceSlotsRequest\x1a$.catalog.v1.GetResourceSlotsResponse\"4\x82\xd3\xe4\x93\x02.\x12,/api/v1/public/resources/{resource_id}/slots2\x85\a\n" +
+	"\x10GetResourceSlots\x12#.catalog.v1.GetResourceSlotsRequest\x1a$.catalog.v1.GetResourceSlotsResponse\"4\x82\xd3\xe4\x93\x02.\x12,/api/v1/public/resources/{resource_id}/slots\x12i\n" +
+	"\x14ValidateResourceSlot\x12'.catalog.v1.ValidateResourceSlotRequest\x1a(.catalog.v1.ValidateResourceSlotResponse2\x85\a\n" +
 	"\x14PublicCatalogService\x12\x8f\x01\n" +
 	"\x13ListSportCategories\x12&.catalog.v1.ListSportCategoriesRequest\x1a'.catalog.v1.ListSportCategoriesResponse\"'\x82\xd3\xe4\x93\x02!\x12\x1f/api/v1/public/sport-categories\x12\x80\x01\n" +
 	"\x10GetSportCategory\x12#.catalog.v1.GetSportCategoryRequest\x1a\x19.catalog.v1.SportCategory\",\x82\xd3\xe4\x93\x02&\x12$/api/v1/public/sport-categories/{id}\x12j\n" +
@@ -48,24 +49,26 @@ var file_catalog_v1_public_service_proto_goTypes = []any{
 	(*GetDetailPublicFacilityRequest)(nil),  // 1: catalog.v1.GetDetailPublicFacilityRequest
 	(*ListPublicResourcesRequest)(nil),      // 2: catalog.v1.ListPublicResourcesRequest
 	(*GetResourceSlotsRequest)(nil),         // 3: catalog.v1.GetResourceSlotsRequest
-	(*ListSportCategoriesRequest)(nil),      // 4: catalog.v1.ListSportCategoriesRequest
-	(*GetSportCategoryRequest)(nil),         // 5: catalog.v1.GetSportCategoryRequest
-	(*ListSportsRequest)(nil),               // 6: catalog.v1.ListSportsRequest
-	(*GetSportSchemaRequest)(nil),           // 7: catalog.v1.GetSportSchemaRequest
-	(*ListProvincesRequest)(nil),            // 8: catalog.v1.ListProvincesRequest
-	(*ListDistrictsRequest)(nil),            // 9: catalog.v1.ListDistrictsRequest
-	(*ListWardsRequest)(nil),                // 10: catalog.v1.ListWardsRequest
-	(*ListPublicFacilitiesResponse)(nil),    // 11: catalog.v1.ListPublicFacilitiesResponse
-	(*GetDetailPublicFacilityResponse)(nil), // 12: catalog.v1.GetDetailPublicFacilityResponse
-	(*ListPublicResourcesResponse)(nil),     // 13: catalog.v1.ListPublicResourcesResponse
-	(*GetResourceSlotsResponse)(nil),        // 14: catalog.v1.GetResourceSlotsResponse
-	(*ListSportCategoriesResponse)(nil),     // 15: catalog.v1.ListSportCategoriesResponse
-	(*SportCategory)(nil),                   // 16: catalog.v1.SportCategory
-	(*ListSportsResponse)(nil),              // 17: catalog.v1.ListSportsResponse
-	(*GetSportSchemaResponse)(nil),          // 18: catalog.v1.GetSportSchemaResponse
-	(*ListProvincesResponse)(nil),           // 19: catalog.v1.ListProvincesResponse
-	(*ListDistrictsResponse)(nil),           // 20: catalog.v1.ListDistrictsResponse
-	(*ListWardsResponse)(nil),               // 21: catalog.v1.ListWardsResponse
+	(*ValidateResourceSlotRequest)(nil),     // 4: catalog.v1.ValidateResourceSlotRequest
+	(*ListSportCategoriesRequest)(nil),      // 5: catalog.v1.ListSportCategoriesRequest
+	(*GetSportCategoryRequest)(nil),         // 6: catalog.v1.GetSportCategoryRequest
+	(*ListSportsRequest)(nil),               // 7: catalog.v1.ListSportsRequest
+	(*GetSportSchemaRequest)(nil),           // 8: catalog.v1.GetSportSchemaRequest
+	(*ListProvincesRequest)(nil),            // 9: catalog.v1.ListProvincesRequest
+	(*ListDistrictsRequest)(nil),            // 10: catalog.v1.ListDistrictsRequest
+	(*ListWardsRequest)(nil),                // 11: catalog.v1.ListWardsRequest
+	(*ListPublicFacilitiesResponse)(nil),    // 12: catalog.v1.ListPublicFacilitiesResponse
+	(*GetDetailPublicFacilityResponse)(nil), // 13: catalog.v1.GetDetailPublicFacilityResponse
+	(*ListPublicResourcesResponse)(nil),     // 14: catalog.v1.ListPublicResourcesResponse
+	(*GetResourceSlotsResponse)(nil),        // 15: catalog.v1.GetResourceSlotsResponse
+	(*ValidateResourceSlotResponse)(nil),    // 16: catalog.v1.ValidateResourceSlotResponse
+	(*ListSportCategoriesResponse)(nil),     // 17: catalog.v1.ListSportCategoriesResponse
+	(*SportCategory)(nil),                   // 18: catalog.v1.SportCategory
+	(*ListSportsResponse)(nil),              // 19: catalog.v1.ListSportsResponse
+	(*GetSportSchemaResponse)(nil),          // 20: catalog.v1.GetSportSchemaResponse
+	(*ListProvincesResponse)(nil),           // 21: catalog.v1.ListProvincesResponse
+	(*ListDistrictsResponse)(nil),           // 22: catalog.v1.ListDistrictsResponse
+	(*ListWardsResponse)(nil),               // 23: catalog.v1.ListWardsResponse
 }
 var file_catalog_v1_public_service_proto_depIdxs = []int32{
 	0,  // 0: catalog.v1.PublicFacilityService.ListPublicFacilities:input_type -> catalog.v1.ListPublicFacilitiesRequest
@@ -73,27 +76,29 @@ var file_catalog_v1_public_service_proto_depIdxs = []int32{
 	1,  // 2: catalog.v1.PublicFacilityService.GetDetailPublicFacility:input_type -> catalog.v1.GetDetailPublicFacilityRequest
 	2,  // 3: catalog.v1.PublicFacilityService.ListPublicResources:input_type -> catalog.v1.ListPublicResourcesRequest
 	3,  // 4: catalog.v1.PublicFacilityService.GetResourceSlots:input_type -> catalog.v1.GetResourceSlotsRequest
-	4,  // 5: catalog.v1.PublicCatalogService.ListSportCategories:input_type -> catalog.v1.ListSportCategoriesRequest
-	5,  // 6: catalog.v1.PublicCatalogService.GetSportCategory:input_type -> catalog.v1.GetSportCategoryRequest
-	6,  // 7: catalog.v1.PublicCatalogService.ListSports:input_type -> catalog.v1.ListSportsRequest
-	7,  // 8: catalog.v1.PublicCatalogService.GetSportSchema:input_type -> catalog.v1.GetSportSchemaRequest
-	8,  // 9: catalog.v1.PublicCatalogService.ListProvinces:input_type -> catalog.v1.ListProvincesRequest
-	9,  // 10: catalog.v1.PublicCatalogService.ListDistricts:input_type -> catalog.v1.ListDistrictsRequest
-	10, // 11: catalog.v1.PublicCatalogService.ListWards:input_type -> catalog.v1.ListWardsRequest
-	11, // 12: catalog.v1.PublicFacilityService.ListPublicFacilities:output_type -> catalog.v1.ListPublicFacilitiesResponse
-	11, // 13: catalog.v1.PublicFacilityService.SearchPublicFacilities:output_type -> catalog.v1.ListPublicFacilitiesResponse
-	12, // 14: catalog.v1.PublicFacilityService.GetDetailPublicFacility:output_type -> catalog.v1.GetDetailPublicFacilityResponse
-	13, // 15: catalog.v1.PublicFacilityService.ListPublicResources:output_type -> catalog.v1.ListPublicResourcesResponse
-	14, // 16: catalog.v1.PublicFacilityService.GetResourceSlots:output_type -> catalog.v1.GetResourceSlotsResponse
-	15, // 17: catalog.v1.PublicCatalogService.ListSportCategories:output_type -> catalog.v1.ListSportCategoriesResponse
-	16, // 18: catalog.v1.PublicCatalogService.GetSportCategory:output_type -> catalog.v1.SportCategory
-	17, // 19: catalog.v1.PublicCatalogService.ListSports:output_type -> catalog.v1.ListSportsResponse
-	18, // 20: catalog.v1.PublicCatalogService.GetSportSchema:output_type -> catalog.v1.GetSportSchemaResponse
-	19, // 21: catalog.v1.PublicCatalogService.ListProvinces:output_type -> catalog.v1.ListProvincesResponse
-	20, // 22: catalog.v1.PublicCatalogService.ListDistricts:output_type -> catalog.v1.ListDistrictsResponse
-	21, // 23: catalog.v1.PublicCatalogService.ListWards:output_type -> catalog.v1.ListWardsResponse
-	12, // [12:24] is the sub-list for method output_type
-	0,  // [0:12] is the sub-list for method input_type
+	4,  // 5: catalog.v1.PublicFacilityService.ValidateResourceSlot:input_type -> catalog.v1.ValidateResourceSlotRequest
+	5,  // 6: catalog.v1.PublicCatalogService.ListSportCategories:input_type -> catalog.v1.ListSportCategoriesRequest
+	6,  // 7: catalog.v1.PublicCatalogService.GetSportCategory:input_type -> catalog.v1.GetSportCategoryRequest
+	7,  // 8: catalog.v1.PublicCatalogService.ListSports:input_type -> catalog.v1.ListSportsRequest
+	8,  // 9: catalog.v1.PublicCatalogService.GetSportSchema:input_type -> catalog.v1.GetSportSchemaRequest
+	9,  // 10: catalog.v1.PublicCatalogService.ListProvinces:input_type -> catalog.v1.ListProvincesRequest
+	10, // 11: catalog.v1.PublicCatalogService.ListDistricts:input_type -> catalog.v1.ListDistrictsRequest
+	11, // 12: catalog.v1.PublicCatalogService.ListWards:input_type -> catalog.v1.ListWardsRequest
+	12, // 13: catalog.v1.PublicFacilityService.ListPublicFacilities:output_type -> catalog.v1.ListPublicFacilitiesResponse
+	12, // 14: catalog.v1.PublicFacilityService.SearchPublicFacilities:output_type -> catalog.v1.ListPublicFacilitiesResponse
+	13, // 15: catalog.v1.PublicFacilityService.GetDetailPublicFacility:output_type -> catalog.v1.GetDetailPublicFacilityResponse
+	14, // 16: catalog.v1.PublicFacilityService.ListPublicResources:output_type -> catalog.v1.ListPublicResourcesResponse
+	15, // 17: catalog.v1.PublicFacilityService.GetResourceSlots:output_type -> catalog.v1.GetResourceSlotsResponse
+	16, // 18: catalog.v1.PublicFacilityService.ValidateResourceSlot:output_type -> catalog.v1.ValidateResourceSlotResponse
+	17, // 19: catalog.v1.PublicCatalogService.ListSportCategories:output_type -> catalog.v1.ListSportCategoriesResponse
+	18, // 20: catalog.v1.PublicCatalogService.GetSportCategory:output_type -> catalog.v1.SportCategory
+	19, // 21: catalog.v1.PublicCatalogService.ListSports:output_type -> catalog.v1.ListSportsResponse
+	20, // 22: catalog.v1.PublicCatalogService.GetSportSchema:output_type -> catalog.v1.GetSportSchemaResponse
+	21, // 23: catalog.v1.PublicCatalogService.ListProvinces:output_type -> catalog.v1.ListProvincesResponse
+	22, // 24: catalog.v1.PublicCatalogService.ListDistricts:output_type -> catalog.v1.ListDistrictsResponse
+	23, // 25: catalog.v1.PublicCatalogService.ListWards:output_type -> catalog.v1.ListWardsResponse
+	13, // [13:26] is the sub-list for method output_type
+	0,  // [0:13] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name

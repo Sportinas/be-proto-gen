@@ -24,6 +24,7 @@ const (
 	PublicFacilityService_GetDetailPublicFacility_FullMethodName = "/catalog.v1.PublicFacilityService/GetDetailPublicFacility"
 	PublicFacilityService_ListPublicResources_FullMethodName     = "/catalog.v1.PublicFacilityService/ListPublicResources"
 	PublicFacilityService_GetResourceSlots_FullMethodName        = "/catalog.v1.PublicFacilityService/GetResourceSlots"
+	PublicFacilityService_ValidateResourceSlot_FullMethodName    = "/catalog.v1.PublicFacilityService/ValidateResourceSlot"
 )
 
 // PublicFacilityServiceClient is the client API for PublicFacilityService service.
@@ -43,6 +44,8 @@ type PublicFacilityServiceClient interface {
 	ListPublicResources(ctx context.Context, in *ListPublicResourcesRequest, opts ...grpc.CallOption) (*ListPublicResourcesResponse, error)
 	// Weekview schedule (resource slots)
 	GetResourceSlots(ctx context.Context, in *GetResourceSlotsRequest, opts ...grpc.CallOption) (*GetResourceSlotsResponse, error)
+	// Internal RPC for booking validation (no HTTP endpoint exposed).
+	ValidateResourceSlot(ctx context.Context, in *ValidateResourceSlotRequest, opts ...grpc.CallOption) (*ValidateResourceSlotResponse, error)
 }
 
 type publicFacilityServiceClient struct {
@@ -103,6 +106,16 @@ func (c *publicFacilityServiceClient) GetResourceSlots(ctx context.Context, in *
 	return out, nil
 }
 
+func (c *publicFacilityServiceClient) ValidateResourceSlot(ctx context.Context, in *ValidateResourceSlotRequest, opts ...grpc.CallOption) (*ValidateResourceSlotResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ValidateResourceSlotResponse)
+	err := c.cc.Invoke(ctx, PublicFacilityService_ValidateResourceSlot_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // PublicFacilityServiceServer is the server API for PublicFacilityService service.
 // All implementations should embed UnimplementedPublicFacilityServiceServer
 // for forward compatibility.
@@ -120,6 +133,8 @@ type PublicFacilityServiceServer interface {
 	ListPublicResources(context.Context, *ListPublicResourcesRequest) (*ListPublicResourcesResponse, error)
 	// Weekview schedule (resource slots)
 	GetResourceSlots(context.Context, *GetResourceSlotsRequest) (*GetResourceSlotsResponse, error)
+	// Internal RPC for booking validation (no HTTP endpoint exposed).
+	ValidateResourceSlot(context.Context, *ValidateResourceSlotRequest) (*ValidateResourceSlotResponse, error)
 }
 
 // UnimplementedPublicFacilityServiceServer should be embedded to have
@@ -143,6 +158,9 @@ func (UnimplementedPublicFacilityServiceServer) ListPublicResources(context.Cont
 }
 func (UnimplementedPublicFacilityServiceServer) GetResourceSlots(context.Context, *GetResourceSlotsRequest) (*GetResourceSlotsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetResourceSlots not implemented")
+}
+func (UnimplementedPublicFacilityServiceServer) ValidateResourceSlot(context.Context, *ValidateResourceSlotRequest) (*ValidateResourceSlotResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ValidateResourceSlot not implemented")
 }
 func (UnimplementedPublicFacilityServiceServer) testEmbeddedByValue() {}
 
@@ -254,6 +272,24 @@ func _PublicFacilityService_GetResourceSlots_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _PublicFacilityService_ValidateResourceSlot_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ValidateResourceSlotRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PublicFacilityServiceServer).ValidateResourceSlot(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: PublicFacilityService_ValidateResourceSlot_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PublicFacilityServiceServer).ValidateResourceSlot(ctx, req.(*ValidateResourceSlotRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // PublicFacilityService_ServiceDesc is the grpc.ServiceDesc for PublicFacilityService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -280,6 +316,10 @@ var PublicFacilityService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetResourceSlots",
 			Handler:    _PublicFacilityService_GetResourceSlots_Handler,
+		},
+		{
+			MethodName: "ValidateResourceSlot",
+			Handler:    _PublicFacilityService_ValidateResourceSlot_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

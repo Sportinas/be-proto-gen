@@ -25,27 +25,62 @@ var File_auth_v1_auth_service_proto protoreflect.FileDescriptor
 
 const file_auth_v1_auth_service_proto_rawDesc = "" +
 	"\n" +
-	"\x1aauth/v1/auth_service.proto\x12\aauth.v1\x1a\x1bauth/v1/auth_messages.proto\x1a\x1cgoogle/api/annotations.proto2\xb9\x01\n" +
-	"\vAuthService\x12U\n" +
-	"\x05Login\x12\x15.auth.v1.LoginRequest\x1a\x16.auth.v1.LoginResponse\"\x1d\x82\xd3\xe4\x93\x02\x17:\x01*\"\x12/api/v1/auth/login\x12S\n" +
+	"\x1aauth/v1/auth_service.proto\x12\aauth.v1\x1a\x1bauth/v1/auth_messages.proto\x1a\x1cgoogle/api/annotations.proto2\xbc\a\n" +
+	"\vAuthService\x12a\n" +
+	"\bRegister\x12\x18.auth.v1.RegisterRequest\x1a\x19.auth.v1.RegisterResponse\" \x82\xd3\xe4\x93\x02\x1a:\x01*\"\x15/api/v1/auth/register\x12U\n" +
+	"\x05Login\x12\x15.auth.v1.LoginRequest\x1a\x16.auth.v1.LoginResponse\"\x1d\x82\xd3\xe4\x93\x02\x17:\x01*\"\x12/api/v1/auth/login\x12l\n" +
+	"\fRefreshToken\x12\x1c.auth.v1.RefreshTokenRequest\x1a\x1d.auth.v1.RefreshTokenResponse\"\x1f\x82\xd3\xe4\x93\x02\x19:\x01*\"\x14/api/v1/auth/refresh\x12Y\n" +
+	"\x06Logout\x12\x16.auth.v1.LogoutRequest\x1a\x17.auth.v1.LogoutResponse\"\x1e\x82\xd3\xe4\x93\x02\x18:\x01*\"\x13/api/v1/auth/logout\x12z\n" +
+	"\x0eForgotPassword\x12\x1e.auth.v1.ForgotPasswordRequest\x1a\x1f.auth.v1.ForgotPasswordResponse\"'\x82\xd3\xe4\x93\x02!:\x01*\"\x1c/api/v1/auth/forgot-password\x12v\n" +
+	"\rResetPassword\x12\x1d.auth.v1.ResetPasswordRequest\x1a\x1e.auth.v1.ResetPasswordResponse\"&\x82\xd3\xe4\x93\x02 :\x01*\"\x1b/api/v1/auth/reset-password\x12\x8f\x01\n" +
+	"\x16GoogleAuthCodeExchange\x12&.auth.v1.GoogleAuthCodeExchangeRequest\x1a'.auth.v1.GoogleAuthCodeExchangeResponse\"$\x82\xd3\xe4\x93\x02\x1e:\x01*\"\x19/api/v1/auth/google/login\x12O\n" +
+	"\x05GetMe\x12\x15.auth.v1.GetMeRequest\x1a\x16.auth.v1.GetMeResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/api/v1/auth/me\x12S\n" +
 	"\x0eDeleteIdentity\x12\x1e.auth.v1.DeleteIdentityRequest\x1a\x1f.auth.v1.DeleteIdentityResponse\"\x00B2Z0github.com/Sportinas/be-proto-gen/auth/v1;authv1b\x06proto3"
 
 var file_auth_v1_auth_service_proto_goTypes = []any{
-	(*LoginRequest)(nil),           // 0: auth.v1.LoginRequest
-	(*DeleteIdentityRequest)(nil),  // 1: auth.v1.DeleteIdentityRequest
-	(*LoginResponse)(nil),          // 2: auth.v1.LoginResponse
-	(*DeleteIdentityResponse)(nil), // 3: auth.v1.DeleteIdentityResponse
+	(*RegisterRequest)(nil),                // 0: auth.v1.RegisterRequest
+	(*LoginRequest)(nil),                   // 1: auth.v1.LoginRequest
+	(*RefreshTokenRequest)(nil),            // 2: auth.v1.RefreshTokenRequest
+	(*LogoutRequest)(nil),                  // 3: auth.v1.LogoutRequest
+	(*ForgotPasswordRequest)(nil),          // 4: auth.v1.ForgotPasswordRequest
+	(*ResetPasswordRequest)(nil),           // 5: auth.v1.ResetPasswordRequest
+	(*GoogleAuthCodeExchangeRequest)(nil),  // 6: auth.v1.GoogleAuthCodeExchangeRequest
+	(*GetMeRequest)(nil),                   // 7: auth.v1.GetMeRequest
+	(*DeleteIdentityRequest)(nil),          // 8: auth.v1.DeleteIdentityRequest
+	(*RegisterResponse)(nil),               // 9: auth.v1.RegisterResponse
+	(*LoginResponse)(nil),                  // 10: auth.v1.LoginResponse
+	(*RefreshTokenResponse)(nil),           // 11: auth.v1.RefreshTokenResponse
+	(*LogoutResponse)(nil),                 // 12: auth.v1.LogoutResponse
+	(*ForgotPasswordResponse)(nil),         // 13: auth.v1.ForgotPasswordResponse
+	(*ResetPasswordResponse)(nil),          // 14: auth.v1.ResetPasswordResponse
+	(*GoogleAuthCodeExchangeResponse)(nil), // 15: auth.v1.GoogleAuthCodeExchangeResponse
+	(*GetMeResponse)(nil),                  // 16: auth.v1.GetMeResponse
+	(*DeleteIdentityResponse)(nil),         // 17: auth.v1.DeleteIdentityResponse
 }
 var file_auth_v1_auth_service_proto_depIdxs = []int32{
-	0, // 0: auth.v1.AuthService.Login:input_type -> auth.v1.LoginRequest
-	1, // 1: auth.v1.AuthService.DeleteIdentity:input_type -> auth.v1.DeleteIdentityRequest
-	2, // 2: auth.v1.AuthService.Login:output_type -> auth.v1.LoginResponse
-	3, // 3: auth.v1.AuthService.DeleteIdentity:output_type -> auth.v1.DeleteIdentityResponse
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	0,  // 0: auth.v1.AuthService.Register:input_type -> auth.v1.RegisterRequest
+	1,  // 1: auth.v1.AuthService.Login:input_type -> auth.v1.LoginRequest
+	2,  // 2: auth.v1.AuthService.RefreshToken:input_type -> auth.v1.RefreshTokenRequest
+	3,  // 3: auth.v1.AuthService.Logout:input_type -> auth.v1.LogoutRequest
+	4,  // 4: auth.v1.AuthService.ForgotPassword:input_type -> auth.v1.ForgotPasswordRequest
+	5,  // 5: auth.v1.AuthService.ResetPassword:input_type -> auth.v1.ResetPasswordRequest
+	6,  // 6: auth.v1.AuthService.GoogleAuthCodeExchange:input_type -> auth.v1.GoogleAuthCodeExchangeRequest
+	7,  // 7: auth.v1.AuthService.GetMe:input_type -> auth.v1.GetMeRequest
+	8,  // 8: auth.v1.AuthService.DeleteIdentity:input_type -> auth.v1.DeleteIdentityRequest
+	9,  // 9: auth.v1.AuthService.Register:output_type -> auth.v1.RegisterResponse
+	10, // 10: auth.v1.AuthService.Login:output_type -> auth.v1.LoginResponse
+	11, // 11: auth.v1.AuthService.RefreshToken:output_type -> auth.v1.RefreshTokenResponse
+	12, // 12: auth.v1.AuthService.Logout:output_type -> auth.v1.LogoutResponse
+	13, // 13: auth.v1.AuthService.ForgotPassword:output_type -> auth.v1.ForgotPasswordResponse
+	14, // 14: auth.v1.AuthService.ResetPassword:output_type -> auth.v1.ResetPasswordResponse
+	15, // 15: auth.v1.AuthService.GoogleAuthCodeExchange:output_type -> auth.v1.GoogleAuthCodeExchangeResponse
+	16, // 16: auth.v1.AuthService.GetMe:output_type -> auth.v1.GetMeResponse
+	17, // 17: auth.v1.AuthService.DeleteIdentity:output_type -> auth.v1.DeleteIdentityResponse
+	9,  // [9:18] is the sub-list for method output_type
+	0,  // [0:9] is the sub-list for method input_type
+	0,  // [0:0] is the sub-list for extension type_name
+	0,  // [0:0] is the sub-list for extension extendee
+	0,  // [0:0] is the sub-list for field type_name
 }
 
 func init() { file_auth_v1_auth_service_proto_init() }
